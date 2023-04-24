@@ -250,14 +250,14 @@ section .clearfix:after {
   margin-top: 10vh;
 }
 
-#story-each .jaeyoung {
+#story-each .changbae {
   float: left;
 }
 
-#story-each .soyoung {
+#story-each .yerin {
   float: right;
 }
-#story-each .soyoung h3 {
+#story-each .yerin h3 {
   text-align: right;
 }
 
@@ -321,10 +321,10 @@ section .clearfix:after {
   transition: right .25s ease-in-out, left .25s ease-in-out, transform .25s ease-in-out;
 }
 
-#playground .thumb.jaeyoung { 
+#playground .thumb.changbae { 
   left: 0;
 }
-#playground .thumb.soyoung { 
+#playground .thumb.yerin { 
   right: 0;
 }
 

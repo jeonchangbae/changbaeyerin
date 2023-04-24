@@ -18,17 +18,17 @@ function getAbsoluteTop(elem) {
   var $pg = document.getElementById("playground");
   var $storyEach = document.getElementById("story-each");
   var $storyTogether = document.getElementById("story-together");
-
-  var $jyThumb = document.getElementById("jaeyoung-thumb");
-  var $jyIcon = $jyThumb.children[0];
-  var $jyContents = Array.from(document.getElementsByClassName("content jaeyoung"));
-  var $syThumb = document.getElementById("soyoung-thumb");
-  var $syIcon = $syThumb.children[0];
-  var $syContents = Array.from(document.getElementsByClassName("content soyoung"));
+ 
+  var $cbThumb = document.getElementById("changbae-thumb");
+  var $cbIcon = $cbThumb.children[0];
+  var $cbContents = Array.from(document.getElementsByClassName("content changbae"));
+  var $yrThumb = document.getElementById("yerin-thumb");
+  var $yrIcon = $yrThumb.children[0];
+  var $yrContents = Array.from(document.getElementsByClassName("content yerin"));
   var $togetherContent = document.getElementsByClassName("content together")[0];
 
-  var jyIconHolders = ['boy', 'man', 'man-with-tuxido', 'couple'];
-  var syIconHolders = ['girl', 'woman', 'woman-with-veil', 'couple'];
+  var cbIconHolders = ['boy', 'man', 'man-with-tuxido', 'couple'];
+  var yrIconHolders = ['girl', 'woman', 'woman-with-veil', 'couple'];
 
   // 동적으로 Dom 의 사이즈가 변경될 수 도 있으니 (이미지 로딩 등),
   // 그냥 매번 계산한다. 현대의 브라우져를 구동하는 단말기들은 생각보다 강력하다.
@@ -54,44 +54,44 @@ function getAbsoluteTop(elem) {
 
     var togetherContentTop = getAbsoluteTop($togetherContent);
 
-    var jyTops = $jyContents.map(getAbsoluteTop);
-    var jyLevel = jyTops.findLastIndex(function(value) { return value < storyEachDecider; });
-    $jyIcon.classList.remove(...jyIconHolders);
-    if (jyLevel < 0) {
-      $jyThumb.style.display = "none";
-      $jyThumb.style.left = 0;
-      $jyThumb.style.transform = "none";
-      $jyIcon.classList.add(jyIconHolders[0]);
+    var cbTops = $cbContents.map(getAbsoluteTop);
+    var cbLevel = cbTops.findLastIndex(function(value) { return value < storyEachDecider; });
+    $cbIcon.classList.remove(...cbIconHolders);
+    if (cbLevel < 0) {
+      $cbThumb.style.display = "none";
+      $cbThumb.style.left = 0;
+      $cbThumb.style.transform = "none";
+      $cbyIcon.classList.add(cbIconHolders[0]);
     } else if (storyEachDecider >= togetherContentTop) {
-      $syThumb.style.display = "block";
-      $jyThumb.style.left = "50%";
-      $jyThumb.style.transform = "translateX(-50%)";
-      $jyIcon.classList.add(jyIconHolders[jyIconHolders.length - 1]);
+      $yrThumb.style.display = "block";
+      $cbThumb.style.left = "50%";
+      $cbThumb.style.transform = "translateX(-50%)";
+      $cbIcon.classList.add(cbIconHolders[cbIconHolders.length - 1]);
     } else {
-      $jyThumb.style.display = "block";
-      $jyThumb.style.left = jyLevel / (jyTops.length * 2) * 100 + "%";
-      $jyThumb.style.transform = "none";
-      $jyIcon.classList.add(jyIconHolders[jyLevel]);
+      $cbThumb.style.display = "block";
+      $cbThumb.style.left = cbLevel / (cbTops.length * 2) * 100 + "%";
+      $cbThumb.style.transform = "none";
+      $cbIcon.classList.add(cbIconHolders[cbLevel]);
     }
 
-    var syTops = $syContents.map(getAbsoluteTop);
-    var syLevel = syTops.findLastIndex(function(value) { return value < storyEachDecider; });
-    $syIcon.classList.remove(...syIconHolders);
-    if (syLevel < 0) {
-      $syThumb.style.display = "none";
-      $syThumb.style.right = 0;
-      $syThumb.style.transform = "none";
-      $syIcon.classList.add(syIconHolders[0]);
+    var yrTops = $yrContents.map(getAbsoluteTop);
+    var yrLevel = yrTops.findLastIndex(function(value) { return value < storyEachDecider; });
+    $yrIcon.classList.remove(...yrIconHolders);
+    if (yrLevel < 0) {
+      $yrThumb.style.display = "none";
+      $yrThumb.style.right = 0;
+      $yrThumb.style.transform = "none";
+      $yrIcon.classList.add(yrIconHolders[0]);
     } else if (storyEachDecider >= togetherContentTop) {
-      $syThumb.style.display = "block";
-      $syThumb.style.right = "50%";
-      $syThumb.style.transform = "translateX(50%)";
-      $syIcon.classList.add(syIconHolders[syIconHolders.length - 1]);
+      $yrThumb.style.display = "block";
+      $yrThumb.style.right = "50%";
+      $yrThumb.style.transform = "translateX(50%)";
+      $yrIcon.classList.add(yrIconHolders[yrIconHolders.length - 1]);
     } else {
-      $syThumb.style.display = "block";
-      $syThumb.style.right = syLevel / (syTops.length * 2) * 100 + "%";
-      $syThumb.style.transform = "none";
-      $syIcon.classList.add(syIconHolders[syLevel]);
+      $yrThumb.style.display = "block";
+      $yrThumb.style.right = yrLevel / (yrTops.length * 2) * 100 + "%";
+      $yrThumb.style.transform = "none";
+      $yrIcon.classList.add(yrIconHolders[yrLevel]);
     }
   }
 
