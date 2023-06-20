@@ -27,8 +27,8 @@ function getAbsoluteTop(elem) {
   var $yrContents = Array.from(document.getElementsByClassName("content yerin"));
   var $togetherContent = document.getElementsByClassName("content together")[0];
 
-  var cbIconHolders = ['boy', 'man', 'man-with-tuxido', 'couple'];
-  var yrIconHolders = ['girl', 'woman', 'woman-with-veil', 'couple'];
+  var cbIconHolders = ['baby', 'boy', 'man', 'couple'];
+  var yrIconHolders = ['baby', 'girl', 'woman', 'couple'];
 
   // 동적으로 Dom 의 사이즈가 변경될 수 도 있으니 (이미지 로딩 등),
   // 그냥 매번 계산한다. 현대의 브라우져를 구동하는 단말기들은 생각보다 강력하다.

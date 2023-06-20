@@ -10,7 +10,7 @@
     rgba(41, 47, 51, 0.85) 85%, 
     rgba(41, 47, 51, 0) 100%
   );
-  --photoset-item-margin: 2px;
+  --photoset-item-margin: 4px;
   --pink-background: rgba(241, 232, 223, 1);
   --pink-color: rgb(32, 66, 49);
 }
